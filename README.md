@@ -12,7 +12,7 @@ To start:
 1. Create a folder
 2. Open the folder in VSCode
 3. Open a new terminal (Ctrl + Shift + `)
-4. Enter this command: git clone https://github.com/Mir-2002/thesis_v2 . (include the dot, this will clone the repo in the folder itself instead of creating a new one)
+4. Enter this command: git clone https://github.com/Mir-2002/thesis_v2.git . (include the dot, this will clone the repo in the folder itself instead of creating a new one)
 
 ## For Frontend
 
