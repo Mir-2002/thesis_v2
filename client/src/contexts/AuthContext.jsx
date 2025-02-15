@@ -20,10 +20,12 @@ export const AuthProvider = ({ children }) => {
         try {
           const response = await axios.get(`${userAPI}/${user.uid}`);
           setCurrentUser(response.data);
+          console.log(response.data);
         } catch (error) {
           console.error("Error fetching user data:", error);
         }
       } else {
+        console.log("No user found");
         setUser(null);
         setCurrentUser(null);
       }

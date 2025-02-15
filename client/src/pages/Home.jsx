@@ -1,7 +1,9 @@
 import React from "react";
 import PythonLogo from "../assets/python_logo.svg";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="flex flex-row items-center justify-center w-full h-full">
@@ -16,7 +18,10 @@ const Home = () => {
             Seamlessly create documentation for your Python code using our
             AI-driven tool.
           </p>
-          <button className="text-[1.5rem] p-5 bg-black text-white">
+          <button
+            className="text-[1.5rem] p-3 bg-black text-white rounded-lg font-medium"
+            onClick={() => navigate("/register")}
+          >
             Get Started
           </button>
         </section>

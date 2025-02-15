@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
-from motor.motor_asyncio import AsyncIOMotorClient
 from views.user import router as user_router
+from views.file import router as file_router
 
 app = FastAPI()
 
@@ -18,12 +17,12 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
-
 @app.get("/")
 async def read_root():
     return {"Hello": "World"}
 
 app.include_router(user_router, prefix="/api", tags=["users"])
+app.include_router(file_router, prefix="/api", tags=["files"])
 
 if __name__ == "__main__":
     import uvicorn

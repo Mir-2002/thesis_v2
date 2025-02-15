@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { doSignInWithEmailAndPassword } from "../auth/auth";
+import { doSignInWithEmailAndPassword, doSignout } from "../auth/auth";
+import { useAuth } from "../contexts/AuthContext";
 
 const Input = ({ type, name, id, label, value, onChange }) => {
   return (

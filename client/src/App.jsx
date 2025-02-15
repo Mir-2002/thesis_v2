@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
 import { AuthProvider } from "./contexts/AuthContext";
+import FileUpload from "./pages/FileUpload";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               {/* Protected Routes */}
               <Route element={<ProtectedRoutes />}>
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/file-upload" element={<FileUpload />} />
               </Route>
             </Route>
           </Routes>

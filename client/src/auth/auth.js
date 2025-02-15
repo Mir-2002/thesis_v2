@@ -13,6 +13,7 @@ export const doCreateUserWithEmailandPassword = async (
   email,
   password
 ) => {
+  const { setAuthInProgress } = useAuth();
   const userAPI = `${import.meta.env.VITE_API_ENDPOINT}/api/users`;
   if (!email || !password || !username) {
     throw new Error("Incomplete form data");
@@ -29,6 +30,7 @@ export const doCreateUserWithEmailandPassword = async (
         email: email,
         uid: userCredential.user.uid,
       });
+      await signOut(auth);
       return userCredential.user;
     } catch (backendError) {
       try {
@@ -37,6 +39,7 @@ export const doCreateUserWithEmailandPassword = async (
         console.error("Error deleting user:", deleteError);
       }
       console.error("Error creating user in backend:", backendError);
+      throw backendError;
     }
   } catch (error) {
     switch (error.code) {

@@ -1,8 +1,7 @@
-from pydantic import BaseModel
-from typing import List
-from .user import User
+from pydantic import BaseModel, Field
+from typing import List, Dict, Any
 
 class File(BaseModel):
     filename: str
-    parsed_data: List[dict[str, any]]
-    user: User
+    parsed_data: List[Dict[str, Any]]
+    skip_list: List[str] = Field(default_factory=list)
