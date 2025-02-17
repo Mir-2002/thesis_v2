@@ -15,6 +15,6 @@ def upload_single_python_file(uid: str, file: UploadFile = File(...), skip_list:
     filtered_data = [item for item in parsed_data if item['name'] not in skip_list]
 
     file_model = FileModel(filename=file.filename, parsed_data=filtered_data, skip_list=skip_list)
-    db.users.update_one({"uid": uid}, {"$push": {"files": file_model.dict()}})
+    db.users.update_one({"uid": uid}, {"$push": {"files": file_model.model_dump()}})
 
     return {"message": "File uploaded successfully"}

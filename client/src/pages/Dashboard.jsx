@@ -30,6 +30,7 @@ const Dashboard = () => {
         <Section
           title="Upload Folder"
           description="Upload your project folder. Option to skip specific directories and files."
+          onClick={() => navigate("/folder-upload")}
         />
         <Section
           title="Using a Repository"

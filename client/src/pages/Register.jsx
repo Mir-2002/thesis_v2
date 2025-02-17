@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { doCreateUserWithEmailandPassword } from "../auth/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
 
 const Input = ({ type, name, id, label, value, onChange, required }) => {
   return (

@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from views.user import router as user_router
 from views.file import router as file_router
+from views.folder import router as folder_router
 
 app = FastAPI()
 
@@ -23,6 +24,7 @@ async def read_root():
 
 app.include_router(user_router, prefix="/api", tags=["users"])
 app.include_router(file_router, prefix="/api", tags=["files"])
+app.include_router(folder_router, prefix="/api", tags=["folders"])
 
 if __name__ == "__main__":
     import uvicorn

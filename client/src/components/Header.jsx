@@ -18,27 +18,41 @@ const Header = () => {
           </h1>
         </div>
         <nav className="flex flex-row items-center justify-end w-1/2">
-          <ul className="flex flex-row items-center justify-between space-x-10">
+          <ul className="flex flex-row items-center justify-between space-x-5 ">
             {currentUser ? (
-              <li>
-                <p>Welcome, {currentUser.username}</p>
-              </li>
-            ) : null}
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/dashboard">Dashboard</a>
-            </li>
-            <li>
-              <a href="/register">Register</a>
-            </li>
-            <li>
-              <a href="/login">Sign In</a>
-            </li>
-            {currentUser ? (
-              <button onClick={handleSignout}>Logout</button>
-            ) : null}
+              <>
+                <li>
+                  <p className="font-medium">
+                    Welcome,{" "}
+                    <span className="text-xl font-medium">
+                      {currentUser.username}
+                    </span>
+                  </p>
+                </li>
+                <li className="hover:bg-gray-200 p-3 rounded-lg font-medium">
+                  <a href="/dashboard">Dashboard</a>
+                </li>
+                <button
+                  onClick={handleSignout}
+                  className="bg-black p-2 rounded-lg text-white font-medium hover:scale-105 transition-transform duration-100"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <li className="hover:bg-gray-200 p-3 rounded-lg font-medium">
+                  <a href="/">Home</a>
+                </li>
+
+                <li className="hover:bg-gray-200 p-3 rounded-lg font-medium">
+                  <a href="/register">Register</a>
+                </li>
+                <li className="hover:bg-gray-200 p-3 rounded-lg font-medium">
+                  <a href="/login">Sign In</a>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
       </header>

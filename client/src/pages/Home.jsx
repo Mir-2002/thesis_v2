@@ -19,7 +19,7 @@ const Home = () => {
             AI-driven tool.
           </p>
           <button
-            className="text-[1.5rem] p-3 bg-black text-white rounded-lg font-medium"
+            className="text-[1.5rem] p-3 bg-black text-white rounded-lg font-medium hover:scale-105 transition-transform duration-100"
             onClick={() => navigate("/register")}
           >
             Get Started
